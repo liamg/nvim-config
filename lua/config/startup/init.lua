@@ -1,0 +1,3 @@
+
+-- speedy startup
+req "impatient"

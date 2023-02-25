@@ -10,5 +10,6 @@ Based on [nvim-basic-ide](https://github.com/LunarVim/nvim-basic-ide).
 1. Install ripgrep (w/ your favourite package manager)
 1. Launch `nvim` - and relaunch immediately if you didn't have packer installed
 1. Run `:checkhealth` to ensure everything is working
-1. Run `:Mason` and install required LSPs
+1. Run `:Mason` and install required LSPs (remember to edit the servers list in `mason.lua` too)
+1. Install `lazygit`.
 

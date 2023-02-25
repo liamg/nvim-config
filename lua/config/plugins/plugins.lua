@@ -7,6 +7,7 @@ end
 
 -- Have packer use a popup window
 packer.init {
+    max_jobs = 5,
     display = {
         open_fn = function()
             return require("packer.util").float { border = "rounded" }
@@ -80,6 +81,9 @@ return packer.startup(function(use)
 
     -- copilot
     use { "github/copilot.vim", commit = "9e869d29e62e36b7eb6fb238a4ca6a6237e7d78b" }
+
+    -- trouble
+    use { "folke/trouble.nvim", commit = "3b754285635a66a93aeb15fa71a23417d8997217"}
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
