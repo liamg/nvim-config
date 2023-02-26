@@ -1,10 +1,11 @@
 require "loader"
 
-req "startup" -- For launching vim - currently used for impatient for speediness
-req "options" -- Set global vim options
-req "keymaps" -- Configure keymaps
-req "plugins" -- Load pluginsuire
-req "autocommands" -- Auto-commands
-req "gui" -- GUI
-req "code" -- Code
-req "project" -- Project management
+Req "startup" -- For launching vim - currently used for impatient for speediness
+Req "options" -- Set global vim options
+Req "keymaps" -- Configure keymaps
+Req "plugins" -- Load pluginsuire
+Req "autocommands" -- Auto-commands
+Req "gui" -- GUI
+Req "code" -- Code
+Req "session" -- Session management
+

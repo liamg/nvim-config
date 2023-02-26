@@ -40,8 +40,8 @@ local opts = {}
 
 for _, server in pairs(servers) do
     opts = {
-        on_attach = req("handlers").on_attach,
-        capabilities = req("handlers").capabilities,
+        on_attach = Req("handlers").on_attach,
+        capabilities = Req("handlers").capabilities,
     }
 
     server = vim.split(server, "@")[1]

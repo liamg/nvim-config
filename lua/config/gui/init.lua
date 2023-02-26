@@ -1,9 +1,10 @@
 
-req "colourscheme" -- Colour scheme
-req "telescope"    -- Telescope
-req "gitsigns"     -- Git gutter signs
-req "nvim-tree"    -- Project tree view
-req "bufferline"   -- List open buffers
-req "lualine"      -- Status line
-req "toggleterm"   -- Terminals
-req "alpha"        -- Greeter
+Req "colourscheme" -- Colour scheme
+Req "telescope"    -- Telescope
+Req "gitsigns"     -- Git gutter signs
+Req "nvim-tree"    -- Project tree view
+Req "bufferline"   -- List open buffers
+Req "lualine"      -- Status line
+Req "toggleterm"   -- Terminals
+Req "alpha"        -- Greeter
+Req "keys"         -- Keymap hints

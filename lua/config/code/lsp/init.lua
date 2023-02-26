@@ -4,7 +4,7 @@ if not status_ok then
     return
 end
 
-req "mason"
-req("handlers").setup()
-req "null-ls"
-req "trouble" -- diagnostics display
+Req "mason"
+Req("handlers").setup()
+Req "null-ls"
+Req "trouble" -- diagnostics display

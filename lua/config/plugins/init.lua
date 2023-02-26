@@ -1,9 +1,9 @@
 
 -- install packer if this is the first time running
-req "installpacker"
+Req "installpacker"
 
 -- auto install when plugins file is edited
-req "auto"
+Req "auto"
 
 -- ensure all required plugins are installed
-req "plugins"
+Req "plugins"

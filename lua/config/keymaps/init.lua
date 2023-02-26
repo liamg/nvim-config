@@ -61,9 +61,6 @@ keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
--- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 keymap("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
@@ -81,3 +78,48 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+-- Help
+keymap("n", "<leader>k", "<cmd>WhichKey<cr>", opts)
+
+-- Git
+keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+
+-- LSP stuff
+opts = { noremap = true, silent = true }
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
+keymap("n", "<leader>lI", "<cmd>Mason<cr>", opts)
+keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+keymap("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
+keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+keymap("n", "<leader>ld", "<cmd>TroubleToggle<CR>", opts)
+
+-- Go 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "go" },
+  callback = function()
+    -- testing
+    keymap("n", "ta", "<cmd>GoTest<cr>", opts)
+    keymap("n", "tu", "<cmd>GoTestFunc<cr>", opts)
+    keymap("n", "tc", "<cmd>GoCoverage<cr>", opts)
+
+    -- tools
+    keymap("n", "gs", "<cmd>GoFillStruct<cr>", opts)
+    keymap("n", "gc", "<cmd>lua require('go.comment').gen()<cr>", opts)
+    keymap("n", "go", "<cmd>GoPkgOutline<cr>", opts)
+    keymap("n", "gt", "<cmd>GoAddTest<cr>", opts)
+    keymap("n", "gmi", "<cmd>GoModInit github.com/", opts)
+    keymap("n", "gmt", "<cmd>GoModTidy<cr>", opts)
+    keymap("n", "gmv", "<cmd>GoModVendor<cr>", opts)
+  end,
+})
+

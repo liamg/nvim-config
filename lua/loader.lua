@@ -1,7 +1,7 @@
 
 local root_dir = "config"
 
-function req(mod)
+function Req(mod)
   local before = _BASE_PACKAGE
   if not _BASE_PACKAGE then
     _BASE_PACKAGE=root_dir.."."..mod

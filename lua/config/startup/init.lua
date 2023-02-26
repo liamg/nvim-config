@@ -1,3 +1,3 @@
 
 -- speedy startup
-req "impatient"
+Req "impatient"
