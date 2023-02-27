@@ -1,3 +1,4 @@
+
 -- Use "q" to close the quickfix window
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },

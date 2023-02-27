@@ -15,10 +15,11 @@ function Req(mod)
   local ok, loaded = pcall(require, _BASE_PACKAGE)
   if not ok then
     _BASE_PACKAGE=backup
-    local loaded = require(_BASE_PACKAGE)
+    loaded = require(_BASE_PACKAGE)
     _BASE_PACKAGE=before
     return loaded
   end
   _BASE_PACKAGE=before
   return loaded
 end
+

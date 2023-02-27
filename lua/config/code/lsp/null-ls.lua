@@ -24,7 +24,11 @@ null_ls.setup {
     formatting.stylua,
     formatting.google_java_format,
     formatting.goimports,
+    formatting.terraform_fmt,
     diagnostics.flake8,
     diagnostics.golangci_lint,
+    diagnostics.luacheck.with {
+      extra_args = { "--default-config", "~/.config/nvim/.luacheckrc" },
+    },
   },
 }

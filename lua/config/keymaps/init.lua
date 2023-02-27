@@ -76,6 +76,9 @@ keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
+-- Cycle colour schemes
+keymap("n", "<leader>c", "<cmd>Telescope colorscheme<cr>", opts)
+
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 
@@ -117,7 +120,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     keymap("n", "gc", "<cmd>lua require('go.comment').gen()<cr>", opts)
     keymap("n", "go", "<cmd>GoPkgOutline<cr>", opts)
     keymap("n", "gt", "<cmd>GoAddTest<cr>", opts)
-    keymap("n", "gmi", "<cmd>GoModInit github.com/", opts)
+    keymap("n", "gmi", ":GoModInit github.com/", opts)
     keymap("n", "gmt", "<cmd>GoModTidy<cr>", opts)
     keymap("n", "gmv", "<cmd>GoModVendor<cr>", opts)
   end,
