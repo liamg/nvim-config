@@ -87,6 +87,7 @@ keymap("n", "<leader>k", "<cmd>WhichKey<cr>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gd", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", opts)
 
 -- LSP stuff
 opts = { noremap = true, silent = true }
@@ -101,7 +102,7 @@ keymap("n", "<leader>lI", "<cmd>Mason<cr>", opts)
 keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 keymap("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
 keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename(vim.fn.input('New Name: '))<cr>", opts)
 keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 keymap("n", "<leader>ld", "<cmd>TroubleToggle<CR>", opts)

@@ -39,3 +39,10 @@ local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
 function _LAZYGIT_TOGGLE()
     lazygit:toggle()
 end
+
+local lazydocker = Terminal:new { cmd = "lazydocker", hidden = true }
+
+function _LAZYDOCKER_TOGGLE()
+    lazydocker:toggle()
+end
+
