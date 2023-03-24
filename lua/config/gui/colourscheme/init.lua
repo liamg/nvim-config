@@ -1,5 +1,5 @@
 
-local colorscheme = "oxocarbon"
+local colorscheme = "habamax"
 vim.opt.background = "dark"
 
 local status_ok, _ = pcall(vim.cmd.colorscheme, colorscheme)

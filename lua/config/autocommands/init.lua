@@ -58,7 +58,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 
 -- format code before exit
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*.go", "*.tf", "*.py" },
+  pattern = { "*.go", "*.tf", "*.py", "*.js", "*.jsx", "*.ts", "*.tsx", "*.vue" },
   callback = function()
     vim.lsp.buf.format()
   end,

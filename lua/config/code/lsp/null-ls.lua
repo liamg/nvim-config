@@ -16,10 +16,8 @@ null_ls.setup {
     -- see https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
     -- for available builtins
 
-    formatting.prettier.with {
-      extra_filetypes = { "toml" },
-      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-    },
+    formatting.eslint_d,
+ --   formatting.prettierd.with {extra_filetypes = { "toml", "js", "ts", "jsx", "tsx", "vue" },      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },    },
     formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
     formatting.google_java_format,
