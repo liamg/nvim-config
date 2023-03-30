@@ -85,9 +85,11 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opt
 -- Help
 keymap("n", "<leader>k", "<cmd>WhichKey<cr>", opts)
 
--- Git
+-- Git/Github/Docker
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>gd", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
+keymap("n", "<leader>gc", "<cmd>Copilot<CR>", opts)
 
 -- LSP stuff
 opts = { noremap = true, silent = true }
@@ -107,7 +109,7 @@ keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 keymap("n", "<leader>ld", "<cmd>TroubleToggle<CR>", opts)
 
--- Go 
+-- Go
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "go" },
   callback = function()

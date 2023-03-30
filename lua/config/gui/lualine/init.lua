@@ -13,45 +13,57 @@ local diagnostics = {
     sections = { "error", "warn" },
     symbols = { error = " ", warn = " " },
     colored = false,
-    always_visible = true,
+    always_visible = false,
 }
 
 local diff = {
     "diff",
-    colored = false,
+    colored = true,
     symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
     cond = hide_in_width,
 }
 
+local subtle = {
+  fg = "#5c6370",
+}
+
 local filetype = {
     "filetype",
-    icons_enabled = false,
+    icons_enabled = true,
+    color = subtle,
 }
 
 local location = {
     "location",
-    padding = 0,
+    padding = { right = 1 },
 }
 
-local spaces = function()
-    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-end
+local filename = {
+  'filename',
+  path = 1,
+  color = subtle,
+}
+
+local encoding = {
+  'encoding',
+  color = subtle,
+}
 
 lualine.setup {
     options = {
         globalstatus = true,
         icons_enabled = true,
         theme = "auto",
-        component_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
-        disabled_filetypes = { "alpha", "dashboard" },
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+        disabled_filetypes = { "alpha", "dashboard", "NvimTree" },
         always_divide_middle = true,
     },
     sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
-        lualine_c = { diagnostics },
-        lualine_x = { diff, spaces, "encoding", filetype },
+        lualine_c = { diagnostics, filename },
+        lualine_x = { diff, encoding, filetype },
         lualine_y = { location },
         lualine_z = { "progress" },
     },

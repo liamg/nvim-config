@@ -62,6 +62,8 @@ return packer.startup(function(use)
     use { "williamboman/mason-lspconfig.nvim" }
     use { "jose-elias-alvarez/null-ls.nvim" }
     use { "RRethy/vim-illuminate" }
+    use { "ray-x/lsp_signature.nvim" }
+    use { "simrat39/inlay-hints.nvim" }
 
     -- Telescope
     use { "nvim-telescope/telescope.nvim" }
@@ -100,6 +102,9 @@ return packer.startup(function(use)
     --use { "rmagatti/auto-session" }
     --use { "rmagatti/session-lens" }
     use { "Shatur/neovim-session-manager" }
+
+    -- stupid pretty stuff
+    use { 'echasnovski/mini.animate', branch = 'stable' }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

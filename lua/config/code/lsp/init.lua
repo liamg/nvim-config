@@ -8,3 +8,5 @@ Req "mason"
 Req("handlers").setup()
 Req "null-ls"
 Req "trouble" -- diagnostics display
+Req "signatures" -- show popup method signatures as you type
+Req "inlays"

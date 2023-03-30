@@ -1,2 +1,2 @@
-globals = { "vim", "Req", "_BASE_PACKAGE" }
+globals = { "vim", "Req", "_BASE_PACKAGE", "PACKER_BOOTSTRAP" }
 
