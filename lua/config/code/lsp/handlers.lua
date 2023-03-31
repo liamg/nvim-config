@@ -72,6 +72,10 @@ M.on_attach = function(client, bufnr)
     if ok then
       inlayhints.on_attach(client, bufnr)
     end
+    local ok2, navbuddy = pcall(require, "nvim-navbuddy")
+    if ok2 then
+      navbuddy.attach(client, bufnr)
+    end
 end
 
 return M

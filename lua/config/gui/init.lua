@@ -9,4 +9,3 @@ Req "toggleterm"   -- Terminals
 Req "alpha"        -- Greeter
 Req "keys"         -- Keymap hints
 
-require("mini.animate").setup()

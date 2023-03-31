@@ -34,7 +34,7 @@ require("inlay-hints").setup({
     type = {
       separator = ", ",
       format = function(hints)
-        return string.format(" » (%s)", hints)
+        return string.format(" -> (%s)", hints)
       end,
     },
   },

@@ -108,6 +108,7 @@ keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename(vim.fn.input('New Name: '
 keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 keymap("n", "<leader>ld", "<cmd>TroubleToggle<CR>", opts)
+keymap("n", "<leader>ln", "<cmd>Navbuddy<CR>", opts)
 
 -- Go
 vim.api.nvim_create_autocmd({ "FileType" }, {

@@ -103,8 +103,14 @@ return packer.startup(function(use)
     --use { "rmagatti/session-lens" }
     use { "Shatur/neovim-session-manager" }
 
-    -- stupid pretty stuff
-    use { 'echasnovski/mini.animate', branch = 'stable' }
+    use {
+      "SmiteshP/nvim-navbuddy",
+      requires = {
+          "neovim/nvim-lspconfig",
+          "SmiteshP/nvim-navic",
+          "MunifTanjim/nui.nvim"
+      }
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
