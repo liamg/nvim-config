@@ -109,6 +109,7 @@ keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 keymap("n", "<leader>ld", "<cmd>TroubleToggle<CR>", opts)
 keymap("n", "<leader>ln", "<cmd>Navbuddy<CR>", opts)
+keymap("n", "<leader>ll", "<cmd>LspRestart<CR>", opts)
 
 -- Go
 vim.api.nvim_create_autocmd({ "FileType" }, {
