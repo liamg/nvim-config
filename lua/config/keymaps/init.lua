@@ -119,6 +119,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     keymap("n", "ta", "<cmd>GoTest<cr>", opts)
     keymap("n", "tu", "<cmd>GoTestFunc<cr>", opts)
     keymap("n", "tc", "<cmd>GoCoverage<cr>", opts)
+    keymap("n", "tt", "<cmd>GoTestSubCase<cr>", opts)
 
     -- tools
     keymap("n", "gs", "<cmd>GoFillStruct<cr>", opts)
