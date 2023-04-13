@@ -110,6 +110,7 @@ keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 keymap("n", "<leader>ld", "<cmd>TroubleToggle<CR>", opts)
 keymap("n", "<leader>ln", "<cmd>Navbuddy<CR>", opts)
 keymap("n", "<leader>ll", "<cmd>LspRestart<CR>", opts)
+keymap("n", "<leader>lp", "<cmd>!go tool pprof -http=localhost:8080 http://localhost:6060/debug/pprof/heap<CR>", opts)
 
 -- Go
 vim.api.nvim_create_autocmd({ "FileType" }, {
