@@ -42,6 +42,7 @@ return packer.startup(function(use)
     use { "nyoom-engineering/oxocarbon.nvim" }
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "rmehri01/onenord.nvim" }
+    use { "projekt0n/github-nvim-theme" }
 
     -- cmp plugins
     use { "hrsh7th/nvim-cmp" }
@@ -111,6 +112,7 @@ return packer.startup(function(use)
           "MunifTanjim/nui.nvim"
       }
     }
+    use { "utilyre/barbecue.nvim" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

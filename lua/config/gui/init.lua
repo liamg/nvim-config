@@ -8,4 +8,4 @@ Req "lualine"      -- Status line
 Req "toggleterm"   -- Terminals
 Req "alpha"        -- Greeter
 Req "keys"         -- Keymap hints
-
+Req "barbecue"     -- Barbecue (context line)

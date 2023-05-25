@@ -49,6 +49,10 @@ local encoding = {
   color = subtle,
 }
 
+local function project()
+  return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+end
+
 lualine.setup {
     options = {
         globalstatus = true,
@@ -56,13 +60,13 @@ lualine.setup {
         theme = "auto",
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
-        disabled_filetypes = { "alpha", "dashboard", "NvimTree" },
+        disabled_filetypes = { "alpha", "dashboard"}, -- "NvimTree" },
         always_divide_middle = true,
     },
     sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
-        lualine_c = { diagnostics, filename },
+        lualine_c = { diagnostics, project, filename },
         lualine_x = { diff, encoding, filetype },
         lualine_y = { location },
         lualine_z = { "progress" },
