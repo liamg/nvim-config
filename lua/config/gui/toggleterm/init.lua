@@ -46,3 +46,9 @@ function _LAZYDOCKER_TOGGLE()
     lazydocker:toggle()
 end
 
+local lazyspotify = Terminal:new { cmd = "spt", hidden = true }
+
+function _LAZYSPOTIFY_TOGGLE()
+    lazyspotify:toggle()
+end
+

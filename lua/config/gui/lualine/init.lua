@@ -27,11 +27,11 @@ local subtle = {
   fg = "#5c6370",
 }
 
-local filetype = {
-    "filetype",
-    icons_enabled = true,
-    color = subtle,
-}
+--local filetype = {
+--    "filetype",
+--    icons_enabled = true,
+--   color = subtle,
+--}
 
 local location = {
     "location",
@@ -44,14 +44,35 @@ local filename = {
   color = subtle,
 }
 
-local encoding = {
-  'encoding',
-  color = subtle,
-}
+--local encoding = {
+--  'encoding',
+--  color = subtle,
+--}
 
 local function project()
   return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 end
+
+
+local songline = ""
+
+local function song()
+  return songline
+end
+
+local function updateSong()
+  local cmd = "spt playback --status --format '%s %t by %a'"
+  local function onspt(_, data)
+    if data then
+      songline = data[1]
+    end
+  end
+  vim.fn.jobstart(cmd, { on_stdout = onspt, stdout_buffered = true })
+end
+
+local timer = vim.loop.new_timer()
+timer:start(1000, 10000, vim.schedule_wrap(updateSong))
+
 
 lualine.setup {
     options = {
@@ -66,8 +87,8 @@ lualine.setup {
     sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
-        lualine_c = { diagnostics, project, filename },
-        lualine_x = { diff, encoding, filetype },
+        lualine_c = { project, filename, diagnostics, diff }, --filetype, encoding
+        lualine_x = { song },
         lualine_y = { location },
         lualine_z = { "progress" },
     },

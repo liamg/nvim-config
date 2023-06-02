@@ -39,7 +39,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 -- Close all buffers except current
-keymap("n", "<leader>q", "<cmd>up|%bd|e#|bn|bd|normal `\"<CR>", opts)
+keymap("n", "<leader>q", "<cmd>up|%bd|e#|bn|bd<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -87,7 +87,7 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opt
 -- Help
 keymap("n", "<leader>k", "<cmd>WhichKey<cr>", opts)
 
--- Git/Github/Docker
+-- Terminal apps: Git/Github/Docker/Spotify
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>gd", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", opts)
 keymap("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
@@ -115,7 +115,13 @@ keymap("n", "<leader>ll", "<cmd>LspRestart<CR>", opts)
 keymap("n", "<leader>lp", "<cmd>!go tool pprof -http=localhost:8080 http://localhost:6060/debug/pprof/heap<CR>", opts)
 
 -- insert stuff
-keymap("n", "<leader>iu", "<cmd>r !uuidgen|tr '[A-Z]' '[a-z]'<cr>kJ", opts)
+keymap("n", "<leader>iu", "<cmd>let a=system(\"uuidgen|tr '[A-Z]' '[a-z]'|tr -d '\\n'\")|exec 'normal a'.a<cr>", opts)
+
+-- spotify
+keymap("n", "<leader>mt", "<cmd>silent exec \"!spt playback --toggle\"<cr>", opts)
+keymap("n", "<leader>mp", "<cmd>silent exec \"!spt playback --previous\"<cr>", opts)
+keymap("n", "<leader>mn", "<cmd>silent exec \"!spt playback --next\"<cr>", opts)
+keymap("n", "<leader>mg", "<cmd>lua _LAZYSPOTIFY_TOGGLE()<CR>", opts)
 
 -- Go
 vim.api.nvim_create_autocmd({ "FileType" }, {
